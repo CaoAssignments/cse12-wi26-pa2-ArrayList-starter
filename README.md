@@ -134,22 +134,22 @@ We provide two test files:
    </td>
   </tr>
   <tr>
-   <td><code>insert</code>
+   <td><code>add</code>
    </td>
-   <td>Test if an element is inserted at the correct location and if size and capacity are updated appropriately to account for the newly inserted element.
+   <td>Test if an element is added at the correct location and if size and capacity are updated appropriately to account for the newly added element.
 <ul>
 
-<li>Insert at index in the range [0, size]
+<li>Add at index in the range [0, size]
 </li>
 </ul>
    </td>
    <td>
 <ul>
-<!--  below are JUnit Insert (UNCHANGED)    -->
-<li>Insert at out-of-bounds index
-<li>Insert multiple times
+<!--  below are JUnit Add (UNCHANGED)    -->
+<li>Add at out-of-bounds index
+<li>Add multiple times
 </li>
-<!--  below are testHidden  Insert  (empty rn!) -->
+<!--  below are testHidden  add  (empty rn!) -->
 </ul>
    </td>
   </tr>
@@ -352,7 +352,7 @@ The following table includes all the methods you need to implement in MyArrayLis
 |--- |--- |--- |--- |
 |`public void expandCapacity (int requiredCapacity)`|If the current capacity is non-zero, double the current capacity. If the current capacity is 0, reset the capacity to the default capacity of 5. If the capacity is still not enough, then set the capacity to requiredCapacity. This method should preserve the current size and elements in the list (the elements before and after expansion should be at the same indices respectively).|If the current capacity is 3 and requiredCapacity is 4, the capacity afterward should be 6. If the current capacity is 3 and requiredCapacity is 18, then capacity should be set to 18 (because $2*3=6$ is less than 18). If the current capacity is 0 and requiredCapacity is 11, then the capacity should be set to 11 (the capacity gets reset to 5, which is less than 11, so it is set to 11).|Throw an `IllegalArgumentException` when `requiredCapacity` is *strictly less than* the current capacity.|
 |`public int getCapacity()`|Get the number of elements that the underlying array can possibly hold, i.e. the length of the underlying array.|None.|None.|
-|`public void insert(int index, E element)`|Insert an element at the specified index. If the array is at capacity before insertion, update the capacity according to `expandCapacity()`'s rules. You may want to take a look at the `expandCapacity()` method.|If the list is`{1,2,3}` and you insert 4 at index 2, the resulting list will be `{1,2,4,3}`. If the list is initially empty {}, and you insert 4 at index 0, the resulting list will be `{4}`. | Throw an `IndexOutOfBoundsException` when the index is *strictly less than 0* or *strictly greater than* the size of the ArrayList.|Throw an `IndexOutOfBoundsException` when the index is *strictly less than 0* or *strictly greater than* the size of the ArrayList.|
+|`public void add(int index, E element)`|Insert an element at the specified index. If the array is at capacity before insertion, update the capacity according to `expandCapacity()`'s rules. You may want to take a look at the `expandCapacity()` method.|If the list is`{1,2,3}` and you insert 4 at index 2, the resulting list will be `{1,2,4,3}`. If the list is initially empty {}, and you insert 4 at index 0, the resulting list will be `{4}`. | Throw an `IndexOutOfBoundsException` when the index is *strictly less than 0* or *strictly greater than* the size of the ArrayList.|Throw an `IndexOutOfBoundsException` when the index is *strictly less than 0* or *strictly greater than* the size of the ArrayList.|
 |`public void append(E element)`|Add an element at the end of the list. If the array is at full capacity, update the capacity according to `expandCapacity()`'s rules.| If the list is `{1,2,3}` and you append 4, the resulting list will be `{1,2,3,4}`. If the list is empty and you append 4, the resulting list should be `{4}` |None. |  If the list is empty and you append 4, the resulting list should be {4}.|None.|
 |`public E get(int index)`|Get an element at the specified index.|If the list is `{1,2,3}`, getting elements at index 2 should return 3.|Throw an `IndexOutOfBoundsException` when the index is *strictly less than 0* or *greater than or equal to* the size of the `ArrayList`.|
 |`public E set(int index, E element)`|Set the given element at the specified index and return the overwritten element.|If the list is `{1,2,3}` and you set element at index 1 to be 4, the resulting list will be `{1,4,3}`.|Throw an `IndexOutOfBoundsException` when the index is *strictly less than 0* or *greater than or equal to* the size of the `ArrayList`.|
