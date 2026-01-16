@@ -291,14 +291,14 @@ public class MyArrayListPublicTester {
      */
     @Test
     public void testShiftToEnd() {
-        MyArrayList<Integer> listWithFiveInt;
+        MyArrayList<Integer> listWithFiveInt, result;
 
         // Example 1
         Integer[] arr1 = new Integer[]{1, 2, 3, 4, 5, null};
         listWithFiveInt = new MyArrayList<>(arr1);
         listWithFiveInt.size = 5;
 
-        MyArrayList<Integer> result = MyAlgorithm.shiftToEnd(listWithFiveInt, 3, 1);
+        result = MyAlgorithm.shiftToEnd(listWithFiveInt, 3, 1);
 
         assertArrayEquals(new Integer[]{1, 5, 2, 3, 4, null}, result.data);
 
@@ -307,7 +307,7 @@ public class MyArrayListPublicTester {
         listWithFiveInt = new MyArrayList<>(arr2);
         listWithFiveInt.size = 5;
 
-        MyArrayList<Integer> result = MyAlgorithm.shiftToEnd(listWithFiveInt, 3, 1);
+        result = MyAlgorithm.shiftToEnd(listWithFiveInt, 2, 1);
 
         assertArrayEquals(new Integer[]{4, 5, 1, 3, 2, null}, result.data);
     }
