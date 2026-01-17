@@ -1,4 +1,4 @@
-
+f
 # CSE 12 PA2: Generics & ArrayLists
 
 **Due Date: Thursday, January 22, 2026, 11:59pm PST**
@@ -409,7 +409,7 @@ In this part of the assignment, you will use `MyArrayList` to solve a "challenge
 
 |Method Name|Description|Exceptions to Throw|
 |--- |--- |--- |
-|`public static MyArrayList<Integer> shiftToEnd(MyArrayList<Integer> nums, int val, int offset)`|For each number in `nums`, in order of beginning to end, move it to the end of the list if it falls within [val - range, val + range] and then return the result. You must do this **in-place**. This means **do NOT** create any containers in your solution; **otherwise, you will recieve a 0**.|Throw an `IllegalArgumentException` when `range` is *strictly less than 0*. Throw a `NullPointerException` when `nums` is null.| 
+|`public static MyArrayList<Integer> shiftToEnd(MyArrayList<Integer> nums, int val, int offset)`|For each number in `nums`, in order of beginning to end, move it to the end of the list if it falls within [val - offset, val + offset] and then return the result. You must do this **in-place**. This means **do NOT** create any containers in your solution; **otherwise, you will recieve a 0**.|Throw an `IllegalArgumentException` when `offset` is *strictly less than 0*. Throw a `NullPointerException` when `nums` is null.| 
 
 #### Examples
 <pre>
